@@ -1,0 +1,1 @@
+{"_schema": "skill_usage_log", "_version": "1.0", "_description": "Skill 使用日志。每次使用 Skill 后追加一条记录，用于频率分析和满意度追踪。"}

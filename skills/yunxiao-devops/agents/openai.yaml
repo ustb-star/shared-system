@@ -1,0 +1,11 @@
+interface:
+  display_name: "云效 DevOps"
+  short_description: "完整获取云效需求正文、评论、动态和附件"
+  default_prompt: "使用 $yunxiao-devops 获取云效需求详情、评论、动态和附件，并在需要时创建版本需求对应的云效工作项。"
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "yunxiao"
+      description: "阿里云云效 DevOps MCP 服务，启用组织管理和项目管理工具集"
+      transport: "stdio"

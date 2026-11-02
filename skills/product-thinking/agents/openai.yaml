@@ -1,0 +1,4 @@
+interface:
+  display_name: "产品方案探讨"
+  short_description: "讨论产品方向、功能规划和方案取舍"
+  default_prompt: "使用 $product-thinking 先加载产品 context 并对齐认知，再和我讨论产品方向、功能规划或需求方案。"

@@ -1,0 +1,71 @@
+{
+    "schemaVersion":  2,
+    "mcpServer":  {
+                      "package":  "alibabacloud-devops-mcp-server",
+                      "version":  "0.3.34",
+                      "transport":  "stdio",
+                      "toolsets":  [
+                                       "organization-management",
+                                       "project-management"
+                                   ]
+                  },
+    "mcpClient":  {
+                      "sdkPackage":  "@modelcontextprotocol/sdk",
+                      "sdkVersion":  "1.29.0",
+                      "cacheEnv":  "YUNXIAO_MCP_CLIENT_CACHE"
+                  },
+    "environment":  {
+                        "accessTokenEnv":  "YUNXIAO_ACCESS_TOKEN",
+                        "apiBaseUrlEnv":  "YUNXIAO_API_BASE_URL",
+                        "defaultApiBaseUrl":  "https://openapi-rdc.aliyuncs.com",
+                        "toolsetsOverrideEnv":  "DEVOPS_TOOLSETS",
+                        "toolArgsJsonEnv":  "YUNXIAO_TOOL_ARGS_JSON",
+                        "debugEnv":  "YUNXIAO_MCP_DEBUG"
+                    },
+    "runtimeInputs":  {
+                          "minimalRequired":  [
+                                                  "projectUrlOrWorkItemUrl"
+                                              ],
+                          "askOnlyIfNeeded":  [
+                                                  "apiBaseUrlForRegionEndpoint",
+                                                  "organizationIdWhenDiscoveryFails",
+                                                  "assigneeOrOwnerUserIdsForWriteOperations",
+                                                  "workitemTypeChoiceAfterMetadataDiscovery",
+                                                  "customFieldValuesAfterFieldConfigDiscovery"
+                                              ],
+                          "doNotAskInitiallyIfUrlProvided":  [
+                                                                 "endpointType",
+                                                                 "organizationId",
+                                                                 "projectId",
+                                                                 "workItemId",
+                                                                 "currentUserId",
+                                                                 "projectName"
+                                                             ]
+                      },
+    "requiredPermissions":  {
+                                "minimumRead":  [
+                                                    "organization-management:current-user-and-organization:read",
+                                                    "organization-management:user-organizations:read",
+                                                    "organization-management:members:read",
+                                                    "project-management:project:read",
+                                                    "project-management:workitem:read",
+                                                    "project-management:workitem-search:read",
+                                                    "project-management:workitem-type-and-field-config:read",
+                                                    "project-management:workitem-comment:read",
+                                                    "project-management:workitem-file:read",
+                                                    "project-management:workitem-activity:read"
+                                                ],
+                                "writeWorkflows":  [
+                                                       "project-management:sprint:create-update",
+                                                       "project-management:version:create-update",
+                                                       "project-management:workitem:create-update"
+                                                   ],
+                                "optional":  [
+                                                 "project-management:workitem-attachment:upload"
+                                             ]
+                            },
+    "security":  {
+                     "storeAccessTokenInConfig":  false,
+                     "notes":  "共享配置中不存储客户 token、cookie、组织专属默认值、临时 OSS URL 或其他凭证。安装/初始化时默认把 token 写入 Windows 用户级持久环境变量，后续进程继承环境变量后读取。"
+                 }
+}

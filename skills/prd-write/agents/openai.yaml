@@ -1,0 +1,4 @@
+interface:
+  display_name: "PRD 撰写"
+  short_description: "撰写两阶段版本 PRD 和验收细节"
+  default_prompt: "使用 $prd-write 基于上下文文件撰写版本 PRD，先完成第一阶段主体内容并等待范围确认。"
